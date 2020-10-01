@@ -2,9 +2,128 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: inherit;
+}
+
+html {
+}
+
+body {
+  background-image: url("https://freecodecampassets.s3.us-east-2.amazonaws.com/Portfolio+Assets+1/16OpacityWhiteCratersArtboard+1.png");
+  /*background-size: 250vh;*/
+  background-position-y: -5%;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100vw;
+}
+
+textarea::-webkit-input-placeholder {
+  color: black;
+}
+
+#scroll-down {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  width: 75px;
+  height: 75px;
+  transform: translateX(-50%);
+  background: transparent;
+  animation: bounce 8s infinite 2s;
+}
+
+@keyframes bounce {
+  6.25% {
+    transform: translate(-50%, 10px);
+  }
+  12.5% {
+    transform: translate(-50%, 0);
+  }
+}
+
+/*
+#textarea {
+  z-index: 1;
+  rows: 20;
+  resize: "none";
+  max-height: 50rem;
+  wrap: "hard";
+  border: 5px solid red;
+}
+*/
+
+code {
+  background: #34314d;
+}
+
+table,
+th,
+td {
+  border: 1px solid cornflowerblue;
+}
+
+#nav-bar {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  height: 10%;
+  width: 100%;
+  background: #141414;
+  font-size: 30px;
+  padding: 10px;
+  color: #4a2fe0;
+}
+
+#logo {
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 30px;
+  height: 35px;
+  width: 35px;
+}
+
+#lucid-title {
+  position: absolute;
+  margin-top: -19px;
+  margin-left: 80px;
+  height: 100px;
+  width: 100px;
+}
+
+blockquote {
+  background: #34314d;
+  border-left: 10px solid cornflowerblue;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: cornflowerblue;
+  content: open-quote;
+  font-size: 3em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+#button1 {
+  display: block;
+  position: absolute;
+  top: 20%;
+  color: red;
+  border-color: red;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,26 +132,471 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#instructions-wrapper {
+  top: 15%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 40%;
+  height: 6rem;
+  border: 5px solid #4a2fe0;
+  border-radius: 2px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+#instructions-title {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 25%;
+  background-color: #4a2fe0;
+  color: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+
+  text-align: center;
+}
+
+#instructions {
+  background: #1b1b1f;
+  color: #4a2fe0;
+  font-size: 10px;
+  width: 100%;
+  height: 75%;
+}
+
+#editor {
+  display: inline;
+  position: relative;
+  width: 100%;
+  height: 90%;
+
+  /* top: 5%; */
+  left: 0px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  padding: 0.7rem;
+
+  background-color: #1b1b1f;
+  color: #4a2fe0;
+  overflow: auto;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+#edit-and-preview-wrapper {
+  position: absolute;
+  top: 40%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  height: 50%;
+  width: 100%;
+}
+
+#editor-wrapper {
+  position: relative;
+
+  width: 49%;
+  height: 21rem;
+  border: 5px solid #4a2fe0;
+  border-radius: 2px;
+}
+
+#editor-title {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 10%;
+  background-color: #4a2fe0;
+  color: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+#preview-wrapper {
+  position: relative;
+  right: 0;
+  width: 49%;
+  height: 21rem;
+  border: 5px solid #4a2fe0;
+  border-radius: 2px;
+}
+
+#preview-title {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 10%;
+  background-color: #4a2fe0;
+  color: black;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+#preview {
+  display: block;
+  position: relative;
+  /*top: 5%; */
+  right: 0px;
+  width: 100%;
+  height: 90%;
+  background-color: #1b1b1f;
+  color: #4a2fe0;
+  overflow: auto;
+
+  padding: 0.7rem;
+
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+#automator-form {
+  position: relative;
+  height: 15 rem;
+
+  color: pink;
+  background: cornflowerblue;
+}
+
+#automator-wrapper {
+  position: absolute;
+  border-radius: 2px;
+
+  background: #4a2fe0;
+  height: 8rem;
+  margin-top: 1%;
+  width: 60%;
+  margin-left: 15%;
+  transform: translateX(-50%);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+  margin-top: 30vh;
+  background: #1b1b1f;
+  position: absolute;
+  top: 50rem;
+  height: 13rem;
+  width: 100%;
+  color: #4a2fe0;
+}
+
+#arrow {
+  height: 30px;
+  width: 30px;
+  margin-left: 76%;
+  margin-top: 1%;
+}
+
+#drag-me {
+  margin-left: 78%;
+  margin-top: -1%;
+}
+
+#button-grid {
+  height: 2rem;
+  width: 100%;
+  background: #4a2fe0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#submit {
+  width: 80%;
+  color: #4a2fe0;
+  background: #1b1b1f;
+  border-color: #1b1b1f;
+  border-radius: 3px;
+  margin-left: 10%;
+
+  border-radius: 10px;
+}
+
+#text-box {
+  width: 97.5%;
+  margin-left: 1.25%;
+
+  border-radius: 5px;
+  background: #8f8e9e;
+  border-color: #1b1b1f;
+  color: black;
+}
+
+.auto-button {
+  background: #4a2fe0;
+  border-style: none;
+}
+
+.auto-buttonF {
+  background: transparent;
+  border-style: none;
+  font-size: 17px;
+}
+
+.auto-button:hover {
+  background-color: cornflowerblue;
+  border-radius: 5px;
+}
+
+#drop-down:hover {
+  background-color: cornflowerblue;
+  border-radius: 5px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1; /* Firefox */
+}
+
+#drop-down {
+  background: #4a2fe0;
+  color: black;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  border-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+#header-type {
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#header-type-title {
+  width: 100%;
+  color: black;
+  background: transparent;
+  text-align: center;
+}
+
+#check-button {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+#check-button:hover {
+  background-color: #4a2fe0;
+  border-radius: 2px;
+}
+
+#dropdown-menu {
+  background: cornflowerblue;
+}
+
+#drag-control {
+  background: transparent;
+  border-style: none;
+}
+
+#draggable {
+  position: absolute;
+  border-radius: 2px;
+
+  background: #4a2fe0;
+  height: 8rem;
+  margin-top: 5%;
+  width: 60%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 900px) and (min-width: 701px) {
+  #instructions {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  #edit-and-preview-wrapper {
+    position: absolute;
+    top: 40%;
+    display: flex;
+    align-content: start;
+    background: transparent;
+    height: 50%;
+    width: 100%;
+  }
+
+  #automator-wrapper {
+    position: absolute;
+    border-radius: 2px;
+
+    background: #4a2fe0;
+    height: 8rem;
+    margin-top: 1%;
+    width: 90%;
+    margin-left: 0;
+    transform: translateX(-50%);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  #editor-wrapper {
+    position: relative;
+    display: block;
+    width: 49%;
+    height: 21rem;
+    border: 5px solid #4a2fe0;
+    border-radius: 2px;
+  }
+
+  #preview-wrapper {
+    position: relative;
+    display: block;
+    right: 0;
+    width: 49%;
+    height: 21rem;
+    border: 5px solid #4a2fe0;
+    border-radius: 2px;
+  }
+
+  #scroll-down {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 75px;
+    height: 75px;
+    transform: translateX(-50%);
+    background: transparent;
+    animation: bounce 8s infinite 2s;
+    display: none;
+  }
+
+  #arrow {
+    height: 30px;
+    width: 30px;
+    margin-left: 76%;
+    margin-top: 1%;
+    display: none;
+  }
+
+  #drag-me {
+    margin-left: 78%;
+    margin-top: -1%;
+    display: none;
+  }
+
+  #automator-wrapper {
+    position: absolute;
+    border-radius: 2px;
+    top: -900px;
+    background: #4a2fe0;
+    height: 8rem;
+    margin-top: 1%;
+    width: 80%;
+    margin-left: 3%;
+    transform: translateX(-50%);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  #instructions-wrapper {
+    display: none;
+  }
+
+  #instructions-title {
+    display: none;
+  }
+
+  .auto-buttonF {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+  #button-grid {
+    height: 2rem;
+    width: 100%;
+    background: #4a2fe0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #instructions {
+    display: none;
+  }
+
+  #edit-and-preview-wrapper {
+    position: absolute;
+    top: 40%;
+    display: flex;
+    align-content: start;
+    background: transparent;
+    height: 50%;
+    width: 100%;
+  }
+
+  #editor-wrapper {
+    position: relative;
+    display: block;
+    width: 49%;
+    height: 21rem;
+    border: 5px solid #4a2fe0;
+    border-radius: 2px;
+  }
+
+  #preview-wrapper {
+    position: relative;
+    display: block;
+    right: 0;
+    width: 49%;
+    height: 21rem;
+    border: 5px solid #4a2fe0;
+    border-radius: 2px;
+  }
+
+  #scroll-down {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 75px;
+    height: 75px;
+    transform: translateX(-50%);
+    background: transparent;
+    animation: bounce 8s infinite 2s;
+    display: none;
+  }
+
+  #arrow {
+    height: 30px;
+    width: 30px;
+    margin-left: 76%;
+    margin-top: 1%;
+    display: none;
+  }
+
+  #drag-me {
+    margin-left: 78%;
+    margin-top: -1%;
+    display: none;
+  }
+
+  #automator-wrapper {
+    position: absolute;
+    border-radius: 2px;
+    top: -900px;
+    background: #4a2fe0;
+    height: 8rem;
+    margin-top: 1%;
+    width: 85%;
+    margin-left: 3%;
+    transform: translateX(-50%);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  #instructions-wrapper {
+    display: none;
+  }
+
+  #instructions-title {
+    display: none;
+  }
+
+  .auto-buttonF {
+    font-size: 8px;
   }
 }
